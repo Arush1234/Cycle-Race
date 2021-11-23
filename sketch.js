@@ -35,29 +35,29 @@ function preload(){
 }
 
 function setup(){
-  
-createCanvas(1200,300);
-// Moving background
-path=createSprite(100,150);
-path.addImage(pathImg);
-path.velocityX = -5;
 
-//creating boy running
-mainCyclist  = createSprite(70,150);
-mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
-mainCyclist.scale=0.07;
-  
-//set collider for mainCyclist
-mainCyclist.setCollider("rectangle",0,0,40,40);
-  
-gameOver = createSprite(650,150);
-gameOver.addImage(gameOverImg);
-gameOver.scale = 0.8;
-gameOver.visible = false;  
-  
-pinkCG = new Group();
-yellowCG = new Group();
-redCG = new Group();
+  createCanvas(1200,300);
+  // Moving background
+  path=createSprite(100,150);
+  path.addImage(pathImg);
+  path.velocityX = -5;
+
+  //creating boy running
+  mainCyclist  = createSprite(70,150);
+  mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
+  mainCyclist.scale=0.07;
+
+  //set collider for mainCyclist
+  mainCyclist.setCollider("rectangle",0,0,40,40);
+
+  gameOver = createSprite(650,150);
+  gameOver.addImage(gameOverImg);
+  gameOver.scale = 0.8;
+  gameOver.visible = false;  
+
+  pinkCG = new Group();
+  yellowCG = new Group();
+  redCG = new Group();
   
 }
 
@@ -78,8 +78,7 @@ function draw() {
   
    edges= createEdgeSprites();
    mainCyclist .collide(edges);
-  
-  //code to reset the background
+
   if(path.x < 0 ){
     path.x = width/2;
   }
